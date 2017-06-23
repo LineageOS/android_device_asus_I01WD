@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.media_vol_steps=25
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.enablenewavrcp=false \
