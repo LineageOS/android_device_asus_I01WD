@@ -160,7 +160,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.msmnile \
     libcutils \
-    libgptutils \
+    libgptutils.asus_msmnile.recovery \
     libz \
 
 PRODUCT_PACKAGES_DEBUG += \
