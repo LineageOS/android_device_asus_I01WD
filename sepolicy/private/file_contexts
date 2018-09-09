@@ -9,6 +9,9 @@
 # Files in sysfs
 /sys/devices/platform/soc/c80000\.i2c/i2c-4/4-0038/dclick_mode	u:object_r:sysfs_touchscreen:s0
 
+# Audio
+/system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0
+
 # HALs
 /system/bin/hw/vendor\.lineage\.camera\.motor@1.0-service\.asus_msmnile	u:object_r:hal_lineage_camera_motor_asus_msmnile_exec:s0
 /system/lib64/hw/power\.qcom\.so	u:object_r:vendor_file:s0
