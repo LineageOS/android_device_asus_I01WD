@@ -42,7 +42,13 @@
 #include <hardware/power.h>
 #include <utils/Log.h>
 
+#include "performance.h"
 #include "power-common.h"
+#include "utils.h"
+
+const int kMaxInteractiveDuration = 5000; /* ms */
+const int kMinInteractiveDuration = 100;  /* ms */
+const int kMinFlingDuration = 1500;       /* ms */
 
 int set_interactive_override(struct power_module* module, int on) {
     static int set_i_count = 0;
@@ -53,17 +59,54 @@ int set_interactive_override(struct power_module* module, int on) {
     return HINT_HANDLED; /* Don't excecute this code path, not in use */
 }
 
-void interaction(int duration, int num_args, int opt_list[]);
+static int process_activity_launch_hint(void* data) {
+    perf_hint_enable_with_type(VENDOR_HINT_FIRST_LAUNCH_BOOST, -1, LAUNCH_BOOST_V1);
+    return HINT_HANDLED;
+}
+
+static int process_interaction_hint(void* data) {
+    struct timeval cur_boost_timeval = {0, 0};
+    static unsigned long long previous_boost_time = 0;
+    static unsigned long long previous_duration = 0;
+    unsigned long long cur_boost_time;
+    double elapsed_time;
+    int duration = kMinInteractiveDuration;
+
+    if (data) {
+        int input_duration = *((int*)data);
+        if (input_duration > duration) {
+            duration = (input_duration > kMaxInteractiveDuration) ? kMaxInteractiveDuration
+                                                                  : input_duration;
+        }
+    }
+
+    gettimeofday(&cur_boost_timeval, NULL);
+    cur_boost_time = cur_boost_timeval.tv_sec * 1000000 + cur_boost_timeval.tv_usec;
+    elapsed_time = (double)(cur_boost_time - previous_boost_time);
+    // don't hint if previous hint's duration covers this hint's duration
+    if ((previous_duration * 1000) > (elapsed_time + duration * 1000)) {
+        return HINT_HANDLED;
+    }
+    previous_boost_time = cur_boost_time;
+    previous_duration = duration;
+
+    if (duration >= kMinFlingDuration) {
+        perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, -1, SCROLL_PREFILING);
+    } else {
+        perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, duration, SCROLL_VERTICAL);
+    }
+    return HINT_HANDLED;
+}
 
 int power_hint_override(struct power_module* module, power_hint_t hint, void* data) {
     int ret_val = HINT_NONE;
     switch (hint) {
-        case POWER_HINT_INTERACTION: {
-            int resources[] = {0x40800100, 0x514};
-            int duration = 100;
-            interaction(duration, sizeof(resources) / sizeof(resources[0]), resources);
-            ret_val = HINT_HANDLED;
-        }
+        case POWER_HINT_INTERACTION:
+            ret_val = process_interaction_hint(data);
+            break;
+        case POWER_HINT_LAUNCH:
+            ret_val = process_activity_launch_hint(data);
+            break;
         default:
             break;
     }
