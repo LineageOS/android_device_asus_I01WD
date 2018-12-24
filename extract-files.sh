@@ -67,11 +67,15 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
 
 # Fix proprietary blobs
 patchelf --remove-needed android.hidl.base@1.0.so \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib/libfm-hci.so"
-patchelf --remove-needed android.hidl.base@1.0.so \
         "${LINEAGE_ROOT}/vendor/"${VENDOR}/${DEVICE}"/proprietary/lib64/libfm-hci.so"
 patchelf --remove-needed android.hidl.base@1.0.so \
+        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib/libfm-hci.so"
+patchelf --remove-needed android.hidl.base@1.0.so \
+        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib/libwfdnative.so"
+patchelf --remove-needed android.hidl.base@1.0.so \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/liblocationservice_jni.so"
+patchelf --remove-needed android.hidl.base@1.0.so \
+        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/libwfdnative.so"
 patchelf --remove-needed android.hidl.base@1.0.so \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/libxt_native.so"
 
