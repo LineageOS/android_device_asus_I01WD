@@ -83,7 +83,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    libvulkan
+    libdisplayconfig \
+    libqdMetaData.system \
+    libvulkan \
+    vendor.display.config@1.4
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -161,3 +164,10 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libnl
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
