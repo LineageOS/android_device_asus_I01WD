@@ -95,6 +95,14 @@ lib64/vendor.qti.imsrtpservice@1.0.so
 -priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
 -priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
 
+# Media
+lib64/libmmosal.so
+lib/extractors/libmmparser.so
+lib/libFileMux.so
+lib/libmmosal.so
+lib/libmmparser_lite.so
+lib/libOmxMux.so
+
 # Telephony
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml
@@ -106,3 +114,36 @@ etc/sysconfig/qti_whitelist.xml
 framework/qcrilhook.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+
+# WiFi Display
+bin/wfdservice
+etc/init/wfdservice.rc
+etc/wfdconfig.xml
+etc/wfdconfigsink.xml
+-framework/WfdCommon.jar
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+lib/libdisplayconfig.so
+lib/libmmrtpdecoder.so
+lib/libmmrtpencoder.so
+lib/libqdMetaData.system.so
+lib/libwfdaac.so
+lib/libwfdavenhancements.so
+lib/libwfdclient.so
+lib/libwfdcodecv4l2.so
+lib/libwfdcommonutils.so
+lib/libwfdconfigutils.so
+lib/libwfdmminterface.so
+lib/libwfdmmsink.so
+lib/libwfdmmsrc.so
+lib/libwfdnative.so|52209347bf2a2126468db035df36953555e339b6
+lib/libwfdrtsp.so
+lib/libwfdservice.so
+lib/libwfdsm.so
+lib/libwfduibcinterface.so
+lib/libwfduibcsink.so
+lib/libwfduibcsinkinterface.so
+lib/libwfduibcsrc.so
+lib/libwfduibcsrcinterface.so
+lib64/libwfdclient.so
+lib64/libwfdnative.so|3d664b514bc50d636dfeff2dcef743976aedee7e
+-priv-app/WfdService/WfdService.apk
