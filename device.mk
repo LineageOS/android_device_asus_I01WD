@@ -58,7 +58,8 @@ PRODUCT_PACKAGES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService
+    AntHalService \
+    vendor.lineage.camera.motor@1.0-service.asus_msmnile
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -67,6 +68,10 @@ PRODUCT_PACKAGES += \
 # Boot control
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
+
+# Camera
+PRODUCT_PACKAGES += \
+    vendor.lineage.camera.motor@1.0-service.asus_msmnile
 
 # Display
 PRODUCT_PACKAGES += \
