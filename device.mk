@@ -68,6 +68,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+# Camera
+PRODUCT_PACKAGES += \
+    lineage.camera.motor@1.0-service.asus_msmnile
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
