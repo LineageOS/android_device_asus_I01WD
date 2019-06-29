@@ -58,7 +58,8 @@ PRODUCT_PACKAGES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService
+    AntHalService \
+    vendor.lineage.camera.motor@1.0-service.asus_msmnile
 
 # Audio
 PRODUCT_PACKAGES += \
