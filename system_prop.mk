@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.settings.xml=/system/etc/media_profiles_vendor.xml
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9,9
