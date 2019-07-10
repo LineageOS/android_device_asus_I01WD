@@ -1,0 +1,7 @@
+# Files in rootfs
+/ADF(/.*)?		u:object_r:demoapp_file:s0
+/APD(/.*)?		u:object_r:demoapp_file:s0
+/asdf(/.*)?		u:object_r:log_file:s0
+/batinfo(/.*)?		u:object_r:demoapp_file:s0
+/voucher(/.*)?		u:object_r:voucher_file:s0
+/xrom(/.*)?		u:object_r:xrom_file:s0
