@@ -1,0 +1,24 @@
+From 6f28b84a2c162b44970112418e3d8b40802b5185 Mon Sep 17 00:00:00 2001
+From: Luca Stefani <luca.stefani.ge1@gmail.com>
+Date: Wed, 10 Jul 2019 20:56:36 +0200
+Subject: [PATCH 5/8] I01WD: Enable support for system navigation keys
+
+---
+ overlay/frameworks/base/core/res/res/values/config.xml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/overlay/frameworks/base/core/res/res/values/config.xml b/overlay/frameworks/base/core/res/res/values/config.xml
+index beb5d43..4e8d4f7 100644
+--- a/overlay/frameworks/base/core/res/res/values/config.xml
++++ b/overlay/frameworks/base/core/res/res/values/config.xml
+@@ -313,4 +313,7 @@
+     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+          in hardware. -->
+     <bool name="config_setColorTransformAccelerated">true</bool>
++
++    <!-- True if the device supports system navigation keys. -->
++    <bool name="config_supportSystemNavigationKeys">true</bool>
+ </resources>
+-- 
+2.22.0
+

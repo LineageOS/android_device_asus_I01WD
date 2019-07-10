@@ -1,0 +1,58 @@
+From 1fec037c939692935fc25dd5b0fa7541b6a73370 Mon Sep 17 00:00:00 2001
+From: LuK1337 <priv.luk@gmail.com>
+Date: Mon, 16 Jul 2018 13:22:31 +0200
+Subject: [PATCH 3/8] sdm845-common: Add ANT+ support
+
+Change-Id: I722da6672e91ee52e004eadf0e123f813db81d8e
+---
+ BoardConfig.mk        | 3 +++
+ device.mk             | 4 ++++
+ proprietary-files.txt | 6 ++++++
+ 3 files changed, 13 insertions(+)
+
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index 6c558f6..dbefa35 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -60,6 +60,9 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+ # Treble
+ BOARD_VNDK_VERSION := current
+ 
++# ANT+
++BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
++
+ # Audio
+ USE_CUSTOM_AUDIO_POLICY := 1
+ USE_XML_AUDIO_POLICY_CONF := 1
+diff --git a/device.mk b/device.mk
+index 7e2cc6a..bf816aa 100644
+--- a/device.mk
++++ b/device.mk
+@@ -56,6 +56,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
+ PRODUCT_PACKAGES += \
+     otapreopt_script
+ 
++# ANT+
++PRODUCT_PACKAGES += \
++    AntHalService
++
+ # Audio
+ PRODUCT_PACKAGES += \
+     audio.a2dp.default
+diff --git a/proprietary-files.txt b/proprietary-files.txt
+index 4125115..ce58c18 100644
+--- a/proprietary-files.txt
++++ b/proprietary-files.txt
+@@ -1,3 +1,9 @@
++# ANT+
++lib64/com.qualcomm.qti.ant@1.0.so
++-lib64/libantradio.so
++lib/com.qualcomm.qti.ant@1.0.so
++-lib/libantradio.so
++
+ # Telephony
+ -app/QtiTelephonyService/QtiTelephonyService.apk
+ etc/permissions/qcrilhook.xml
+-- 
+2.22.0
+

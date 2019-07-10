@@ -1,0 +1,69 @@
+From b8cff1d2b2f63dcebfadf17349cc850b3fc8ba57 Mon Sep 17 00:00:00 2001
+From: Fenglin Wu <fenglinw@codeaurora.org>
+Date: Tue, 10 Jul 2018 10:51:08 +0800
+Subject: [PATCH 1/8] I01WD: Exclude qti-haptics input device from InputManager
+
+Add excluded-input-devices.xml file to exclude qti-haptics input
+device from being added as an InputDeviceVibrator.
+
+Change-Id: Id7c5a071513c4774a80e629caa685a864e995e06
+---
+ configs/excluded-input-devices.xml | 30 ++++++++++++++++++++++++++++++
+ device.mk                          |  4 ++++
+ 2 files changed, 34 insertions(+)
+ create mode 100644 configs/excluded-input-devices.xml
+
+diff --git a/configs/excluded-input-devices.xml b/configs/excluded-input-devices.xml
+new file mode 100644
+index 0000000..32aac2c
+--- /dev/null
++++ b/configs/excluded-input-devices.xml
+@@ -0,0 +1,30 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright (c) 2018 The Linux Foundation. All rights reserved.          -->
++<!--                                                                        -->
++<!-- Redistribution and use in source and binary forms, with or without     -->
++<!-- modification, are permitted provided that the following conditions are -->
++<!-- met:                                                                   -->
++<!--     * Redistributions of source code must retain the above copyright   -->
++<!--       notice, this list of conditions and the following disclaimer.    -->
++<!--     * Redistributions in binary form must reproduce the above          -->
++<!--       copyright notice, this list of conditions and the following      -->
++<!--       disclaimer in the documentation and/or other materials provided  -->
++<!--       with the distribution.                                           -->
++<!--     * Neither the name of The Linux Foundation nor the names of its    -->
++<!--       contributors may be used to endorse or promote products derived  -->
++<!--       from this software without specific prior written permission.    -->
++<!--                                                                        -->
++<!-- THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED           -->
++<!-- WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF   -->
++<!-- MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT -->
++<!-- ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS -->
++<!-- BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR -->
++<!-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF   -->
++<!-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR        -->
++<!-- BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,  -->
++<!-- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE   -->
++<!-- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN -->
++<!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
++<devices>
++    <device name="qti-haptics"/>
++</devices>
+diff --git a/device.mk b/device.mk
+index 823cfba..87d8c9a 100644
+--- a/device.mk
++++ b/device.mk
+@@ -74,6 +74,10 @@ PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
+     $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl
+ 
++# Exclude vibrator from InputManager
++PRODUCT_COPY_FILES += \
++    $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
++
+ # Net
+ PRODUCT_PACKAGES += \
+     netutils-wrapper-1.0
+-- 
+2.22.0
+

@@ -1,0 +1,264 @@
+From 023041fb036e5c446eb60b22fa769cdcb16c0157 Mon Sep 17 00:00:00 2001
+From: Luca Stefani <luca.stefani.ge1@gmail.com>
+Date: Wed, 10 Jul 2019 19:53:01 +0200
+Subject: [PATCH 6/8] I01WD: Import stub camera motor HAL
+
+---
+ camera_motor/Android.bp                       | 32 +++++++++++
+ camera_motor/CameraMotor.cpp                  | 55 +++++++++++++++++++
+ camera_motor/CameraMotor.h                    | 46 ++++++++++++++++
+ camera_motor/service.cpp                      | 50 +++++++++++++++++
+ ...e.camera.motor@1.0-service.asus_msmnile.rc |  6 ++
+ sepolicy/private/file_contexts                |  2 +
+ .../hal_lineage_camera_motor_asus_msmnile.te  |  5 ++
+ 7 files changed, 196 insertions(+)
+ create mode 100644 camera_motor/Android.bp
+ create mode 100644 camera_motor/CameraMotor.cpp
+ create mode 100644 camera_motor/CameraMotor.h
+ create mode 100644 camera_motor/service.cpp
+ create mode 100644 camera_motor/vendor.lineage.camera.motor@1.0-service.asus_msmnile.rc
+ create mode 100644 sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te
+
+diff --git a/camera_motor/Android.bp b/camera_motor/Android.bp
+new file mode 100644
+index 0000000..8c680af
+--- /dev/null
++++ b/camera_motor/Android.bp
+@@ -0,0 +1,32 @@
++//
++// Copyright (C) 2019 The LineageOS Project
++//
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//      http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++cc_binary {
++    relative_install_path: "hw",
++    defaults: ["hidl_defaults"],
++    name: "vendor.lineage.camera.motor@1.0-service.asus_msmnile",
++    init_rc: ["vendor.lineage.camera.motor@1.0-service.asus_msmnile.rc"],
++    srcs: ["service.cpp", "CameraMotor.cpp"],
++    shared_libs: [
++        "libbase",
++        "libhardware",
++        "libhidlbase",
++        "libhidltransport",
++        "liblog",
++        "libhwbinder",
++        "libutils",
++        "vendor.lineage.camera.motor@1.0",
++    ],
++}
+diff --git a/camera_motor/CameraMotor.cpp b/camera_motor/CameraMotor.cpp
+new file mode 100644
+index 0000000..55bf016
+--- /dev/null
++++ b/camera_motor/CameraMotor.cpp
+@@ -0,0 +1,55 @@
++/*
++ * Copyright (C) 2019 The LineageOS Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#define LOG_TAG "CameraMotorService"
++
++#include "CameraMotor.h"
++#include <android-base/logging.h>
++#include <hidl/HidlTransportSupport.h>
++
++#define CAMERA_ID_FRONT 1
++
++namespace vendor {
++namespace lineage {
++namespace camera {
++namespace motor {
++namespace V1_0 {
++namespace implementation {
++
++Return<void> CameraMotor::onConnect(int8_t cameraId) {
++    if (cameraId == CAMERA_ID_FRONT) {
++        LOG(INFO) << "Rotating camera from front";
++    } else if (cameraId != CAMERA_ID_FRONT) {
++        LOG(INFO) << "Rotating camera to front";
++    }
++
++    return Void();
++}
++
++Return<void> CameraMotor::onDisconnect(int8_t cameraId) {
++    if (cameraId == CAMERA_ID_FRONT) {
++        LOG(INFO) << "Rotating camera from front";
++    }
++
++    return Void();
++}
++
++}  // namespace implementation
++}  // namespace V1_0
++}  // namespace motor
++}  // namespace camera
++}  // namespace lineage
++}  // namespace vendor
+diff --git a/camera_motor/CameraMotor.h b/camera_motor/CameraMotor.h
+new file mode 100644
+index 0000000..9399311
+--- /dev/null
++++ b/camera_motor/CameraMotor.h
+@@ -0,0 +1,46 @@
++/*
++ * Copyright (C) 2019 The LineageOS Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++#ifndef VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
++#define VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
++
++#include <vendor/lineage/camera/motor/1.0/ICameraMotor.h>
++
++namespace vendor {
++namespace lineage {
++namespace camera {
++namespace motor {
++namespace V1_0 {
++namespace implementation {
++
++using ::android::hardware::Return;
++using ::android::hardware::Void;
++
++class CameraMotor : public ICameraMotor {
++  public:
++    CameraMotor() = default;
++
++    Return<void> onConnect(int8_t cameraId) override;
++    Return<void> onDisconnect(int8_t cameraId) override;
++};
++
++}  // namespace implementation
++}  // namespace V1_0
++}  // namespace motor
++}  // namespace camera
++}  // namespace lineage
++}  // namespace vendor
++
++#endif  // VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
+diff --git a/camera_motor/service.cpp b/camera_motor/service.cpp
+new file mode 100644
+index 0000000..8e3c4c3
+--- /dev/null
++++ b/camera_motor/service.cpp
+@@ -0,0 +1,50 @@
++/*
++ * Copyright (C) 2019 The LineageOS Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#define LOG_TAG "vendor.lineage.camera.motor@1.0-service.asus_msmnile"
++
++#include <android-base/logging.h>
++#include <hidl/HidlTransportSupport.h>
++
++#include "CameraMotor.h"
++
++using android::hardware::configureRpcThreadpool;
++using android::hardware::joinRpcThreadpool;
++
++using vendor::lineage::camera::motor::V1_0::ICameraMotor;
++using vendor::lineage::camera::motor::V1_0::implementation::CameraMotor;
++
++using android::OK;
++using android::status_t;
++
++int main() {
++    android::sp<ICameraMotor> service = new CameraMotor();
++
++    configureRpcThreadpool(1, true);
++
++    status_t status = service->registerAsService();
++    if (status != OK) {
++        LOG(ERROR) << "Cannot register Camera Motor HAL service.";
++        return 1;
++    }
++
++    LOG(INFO) << "Camera Motor HAL service ready.";
++
++    joinRpcThreadpool();
++
++    LOG(ERROR) << "FOD HAL service failed to join thread pool.";
++    return 1;
++}
+diff --git a/camera_motor/vendor.lineage.camera.motor@1.0-service.asus_msmnile.rc b/camera_motor/vendor.lineage.camera.motor@1.0-service.asus_msmnile.rc
+new file mode 100644
+index 0000000..2c34244
+--- /dev/null
++++ b/camera_motor/vendor.lineage.camera.motor@1.0-service.asus_msmnile.rc
+@@ -0,0 +1,6 @@
++service vendor.camera-motor-1-0 /system/bin/hw/vendor.lineage.camera.motor@1.0-service.asus_msmnile
++    interface vendor.lineage.camera.motor@1.0::ICameraMotor default
++    class hal
++    user system
++    group system
++    shutdown critical
+diff --git a/sepolicy/private/file_contexts b/sepolicy/private/file_contexts
+index ad94c71..cf9e177 100644
+--- a/sepolicy/private/file_contexts
++++ b/sepolicy/private/file_contexts
+@@ -5,3 +5,5 @@
+ /batinfo(/.*)?		u:object_r:demoapp_file:s0
+ /voucher(/.*)?		u:object_r:voucher_file:s0
+ /xrom(/.*)?		u:object_r:xrom_file:s0
++
++/system/bin/hw/vendor\.lineage\.camera\.motor@1.0-service\.asus_msmnile u:object_r:hal_lineage_camera_motor_asus_msmnile_exec:s0
+diff --git a/sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te b/sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te
+new file mode 100644
+index 0000000..b48aa87
+--- /dev/null
++++ b/sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te
+@@ -0,0 +1,5 @@
++type hal_lineage_camera_motor_asus_msmnile, domain, coredomain;
++hal_server_domain(hal_lineage_camera_motor_asus_msmnile, hal_lineage_camera_motor)
++
++type hal_lineage_camera_motor_asus_msmnile_exec, exec_type, file_type;
++init_daemon_domain(hal_lineage_camera_motor_asus_msmnile)
+-- 
+2.22.0
+

@@ -1,0 +1,58 @@
+From e1a18494fb4e4c8895d950b74f52f8f0828e7c0f Mon Sep 17 00:00:00 2001
+From: Peter Cai <peter@typeblog.net>
+Date: Sat, 29 Jun 2019 08:28:20 +0800
+Subject: [PATCH 8/8] I01WD: Build and add camera motor to manifest
+
+---
+ BoardConfig.mk         |  1 +
+ device.mk              |  3 ++-
+ framework_manifest.xml | 11 +++++++++++
+ 3 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 framework_manifest.xml
+
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index dbefa35..aeeb5f9 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -59,6 +59,7 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+ 
+ # Treble
+ BOARD_VNDK_VERSION := current
++DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
+ 
+ # ANT+
+ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+diff --git a/device.mk b/device.mk
+index bf816aa..6563937 100644
+--- a/device.mk
++++ b/device.mk
+@@ -58,7 +58,8 @@ PRODUCT_PACKAGES += \
+ 
+ # ANT+
+ PRODUCT_PACKAGES += \
+-    AntHalService
++    AntHalService \
++    vendor.lineage.camera.motor@1.0-service.asus_msmnile
+ 
+ # Audio
+ PRODUCT_PACKAGES += \
+diff --git a/framework_manifest.xml b/framework_manifest.xml
+new file mode 100644
+index 0000000..5c6aeeb
+--- /dev/null
++++ b/framework_manifest.xml
+@@ -0,0 +1,11 @@
++<manifest version="1.0" type="framework">
++    <hal format="hidl" optional="true">
++        <name>vendor.lineage.camera.motor</name>
++        <transport>hwbinder</transport>
++        <version>1.0</version>
++        <interface>
++            <name>ICameraMotor</name>
++            <instance>default</instance>
++        </interface>
++    </hal>
++</manifest>
+-- 
+2.22.0
+

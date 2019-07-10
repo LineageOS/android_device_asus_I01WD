@@ -1,0 +1,168 @@
+From 9d7cbd9b97509fd05044dd0a3671e89fe2b658ec Mon Sep 17 00:00:00 2001
+From: Luca Stefani <luca.stefani.ge1@gmail.com>
+Date: Wed, 10 Jul 2019 20:42:18 +0200
+Subject: [PATCH 7/8] I01WD: camera_motor: Add support to ASUS motor
+
+---
+ camera_motor/AsusMotor.h                      | 37 +++++++++++++++++++
+ camera_motor/CameraMotor.cpp                  | 17 +++++++++
+ camera_motor/CameraMotor.h                    |  7 +++-
+ sepolicy/private/file.te                      |  2 +
+ sepolicy/private/file_contexts                |  3 +-
+ .../hal_lineage_camera_motor_asus_msmnile.te  |  2 +
+ 6 files changed, 66 insertions(+), 2 deletions(-)
+ create mode 100644 camera_motor/AsusMotor.h
+
+diff --git a/camera_motor/AsusMotor.h b/camera_motor/AsusMotor.h
+new file mode 100644
+index 0000000..a7aaa58
+--- /dev/null
++++ b/camera_motor/AsusMotor.h
+@@ -0,0 +1,37 @@
++/*
++ * Copyright (C) 2019 The LineageOS Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#pragma once
++
++typedef struct {
++    int dir;
++    int angle;
++    int speed;
++} motorDrvManualConfig_t;
++
++#define ASUS_MOTOR_NAME_SIZE 32
++#define ASUS_MOTOR_DATA_SIZE 4
++
++#define ASUS_MOTOR_DRV_DEV_PATH ("/dev/asusMotoDrv")
++#define ASUS_MOTOR_DRV_IOC_MAGIC ('M')
++#define ASUS_MOTOR_DRV_AUTO_MODE _IOW(ASUS_MOTOR_DRV_IOC_MAGIC, 1, int)
++#define ASUS_MOTOR_DRV_MANUAL_MODE _IOW(ASUS_MOTOR_DRV_IOC_MAGIC, 2, motorDrvManualConfig_t)
++#define ASUS_MOTOR_DRV_STOP _IOW(ASUS_MOTOR_DRV_IOC_MAGIC, 3, int)
++#define ASUS_MOTOR_DRV_GET_NAME _IOR(ASUS_MOTOR_DRV_IOC_MAGIC, 4, char[ASUS_MOTOR_NAME_SIZE])
++#define ASUS_MOTOR_DRV_CLOSE _IOR(ASUS_MOTOR_DRV_IOC_MAGIC, 5, char[ASUS_MOTOR_NAME_SIZE])
++
++#define ASUS_MOTOR_DRV_AUTO_MODE_WITH_ANGLE _IOW(ASUS_MOTOR_DRV_IOC_MAGIC, 6, int)
++#define ASUS_MOTOR_DRV_GET_STEPS _IOR(ASUS_MOTOR_DRV_IOC_MAGIC, 7, int)
+diff --git a/camera_motor/CameraMotor.cpp b/camera_motor/CameraMotor.cpp
+index 55bf016..2a3fcc3 100644
+--- a/camera_motor/CameraMotor.cpp
++++ b/camera_motor/CameraMotor.cpp
+@@ -17,6 +17,8 @@
+ #define LOG_TAG "CameraMotorService"
+ 
+ #include "CameraMotor.h"
++#include "AsusMotor.h"
++
+ #include <android-base/logging.h>
+ #include <hidl/HidlTransportSupport.h>
+ 
+@@ -29,12 +31,22 @@ namespace motor {
+ namespace V1_0 {
+ namespace implementation {
+ 
++CameraMotor::CameraMotor() {
++    motor_fd_ = android::base::unique_fd(open("/dev/asusMotoDrv", O_RDWR | O_CLOEXEC));
++}
++
+ Return<void> CameraMotor::onConnect(int8_t cameraId) {
++    motorDrvManualConfig_t cmd;
++    cmd.angle = 180;
++    cmd.speed = 4;
+     if (cameraId == CAMERA_ID_FRONT) {
+         LOG(INFO) << "Rotating camera from front";
++        cmd.dir = 0;
+     } else if (cameraId != CAMERA_ID_FRONT) {
+         LOG(INFO) << "Rotating camera to front";
++        cmd.dir = 1;
+     }
++    ioctl(motor_fd_.get(), ASUS_MOTOR_DRV_MANUAL_MODE, &cmd);
+ 
+     return Void();
+ }
+@@ -42,6 +54,11 @@ Return<void> CameraMotor::onConnect(int8_t cameraId) {
+ Return<void> CameraMotor::onDisconnect(int8_t cameraId) {
+     if (cameraId == CAMERA_ID_FRONT) {
+         LOG(INFO) << "Rotating camera from front";
++        motorDrvManualConfig_t cmd;
++        cmd.dir = 0;
++        cmd.angle = 180;
++        cmd.speed = 4;
++        ioctl(motor_fd_.get(), ASUS_MOTOR_DRV_MANUAL_MODE, &cmd);
+     }
+ 
+     return Void();
+diff --git a/camera_motor/CameraMotor.h b/camera_motor/CameraMotor.h
+index 9399311..57eed20 100644
+--- a/camera_motor/CameraMotor.h
++++ b/camera_motor/CameraMotor.h
+@@ -16,6 +16,8 @@
+ #ifndef VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
+ #define VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
+ 
++#include <android-base/unique_fd.h>
++
+ #include <vendor/lineage/camera/motor/1.0/ICameraMotor.h>
+ 
+ namespace vendor {
+@@ -30,10 +32,13 @@ using ::android::hardware::Void;
+ 
+ class CameraMotor : public ICameraMotor {
+   public:
+-    CameraMotor() = default;
++    CameraMotor();
+ 
+     Return<void> onConnect(int8_t cameraId) override;
+     Return<void> onDisconnect(int8_t cameraId) override;
++
++  private:
++    android::base::unique_fd motor_fd_;
+ };
+ 
+ }  // namespace implementation
+diff --git a/sepolicy/private/file.te b/sepolicy/private/file.te
+index cb1e59c..9457a90 100644
+--- a/sepolicy/private/file.te
++++ b/sepolicy/private/file.te
+@@ -2,3 +2,5 @@ type demoapp_file, file_type;
+ type log_file, file_type;
+ type voucher_file, file_type;
+ type xrom_file, file_type;
++
++type asus_motor_device, file_type;
+diff --git a/sepolicy/private/file_contexts b/sepolicy/private/file_contexts
+index cf9e177..620609a 100644
+--- a/sepolicy/private/file_contexts
++++ b/sepolicy/private/file_contexts
+@@ -6,4 +6,5 @@
+ /voucher(/.*)?		u:object_r:voucher_file:s0
+ /xrom(/.*)?		u:object_r:xrom_file:s0
+ 
+-/system/bin/hw/vendor\.lineage\.camera\.motor@1.0-service\.asus_msmnile u:object_r:hal_lineage_camera_motor_asus_msmnile_exec:s0
++# HALs
++/system/bin/hw/vendor\.lineage\.camera\.motor@1.0-service\.asus_msmnile	u:object_r:hal_lineage_camera_motor_asus_msmnile_exec:s0
+diff --git a/sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te b/sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te
+index b48aa87..73e393e 100644
+--- a/sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te
++++ b/sepolicy/private/hal_lineage_camera_motor_asus_msmnile.te
+@@ -3,3 +3,5 @@ hal_server_domain(hal_lineage_camera_motor_asus_msmnile, hal_lineage_camera_moto
+ 
+ type hal_lineage_camera_motor_asus_msmnile_exec, exec_type, file_type;
+ init_daemon_domain(hal_lineage_camera_motor_asus_msmnile)
++
++allow hal_lineage_camera_motor_asus_msmnile asus_motor_device:chr_file rw_file_perms;
+-- 
+2.22.0
+
