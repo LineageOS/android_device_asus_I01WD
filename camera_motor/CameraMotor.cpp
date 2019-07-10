@@ -17,6 +17,8 @@
 #define LOG_TAG "CameraMotorService"
 
 #include "CameraMotor.h"
+#include "AsusMotor.h"
+
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
 
@@ -29,9 +31,18 @@ namespace motor {
 namespace V1_0 {
 namespace implementation {
 
+CameraMotor::CameraMotor() {
+    motor_fd_ = android::base::unique_fd(open(ASUS_MOTOR_DRV_DEV_PATH, O_RDWR));
+}
+
 Return<void> CameraMotor::onConnect(const hidl_string& cameraId) {
     if (cameraId == CAMERA_ID_FRONT) {
         LOG(INFO) << "Rotating camera to front";
+        motorDrvManualConfig_t cmd;
+        cmd.dir = 0;
+        cmd.angle = 180;
+        cmd.speed = 4;
+        ioctl(motor_fd_.get(), ASUS_MOTOR_DRV_MANUAL_MODE, &cmd);
     }
 
     return Void();
@@ -40,6 +51,11 @@ Return<void> CameraMotor::onConnect(const hidl_string& cameraId) {
 Return<void> CameraMotor::onDisconnect(const hidl_string& cameraId) {
     if (cameraId == CAMERA_ID_FRONT) {
         LOG(INFO) << "Rotating camera from front";
+        motorDrvManualConfig_t cmd;
+        cmd.dir = 1;
+        cmd.angle = 180;
+        cmd.speed = 4;
+        ioctl(motor_fd_.get(), ASUS_MOTOR_DRV_MANUAL_MODE, &cmd);
     }
 
     return Void();
