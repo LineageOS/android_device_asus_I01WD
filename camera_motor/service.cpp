@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.camera.motor@1.0-service.asus_msmnile"
+#define LOG_TAG "lineage.camera.motor@1.0-service.asus_msmnile"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
