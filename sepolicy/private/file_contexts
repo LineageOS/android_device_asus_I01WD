@@ -6,4 +6,5 @@
 /voucher(/.*)?		u:object_r:voucher_file:s0
 /xrom(/.*)?		u:object_r:xrom_file:s0
 
-/system/bin/hw/vendor\.lineage\.camera\.motor@1.0-service\.asus_msmnile u:object_r:hal_lineage_camera_motor_asus_msmnile_exec:s0
+# HALs
+/system/bin/hw/vendor\.lineage\.camera\.motor@1.0-service\.asus_msmnile	u:object_r:hal_lineage_camera_motor_asus_msmnile_exec:s0
