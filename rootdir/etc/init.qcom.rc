@@ -5,3 +5,6 @@ on init
 on boot
     # Gestures
     chown system system /sys/devices/platform/soc/c80000.i2c/i2c-4/4-0038/dclick_mode
+
+    # Google Key
+    write /sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable 1
