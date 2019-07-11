@@ -109,6 +109,10 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
+# Power
+PRODUCT_PACKAGES += \
+    power.qcom:64
+
 # Update engine
 PRODUCT_PACKAGES += \
     brillo_update_payload \
