@@ -72,6 +72,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     lineage.camera.motor@1.0-service.asus_msmnile
 
+# Common init scripts
+PRODUCT_PACKAGES += \
+    init.qcom.rc
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
