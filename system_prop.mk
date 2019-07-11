@@ -14,6 +14,16 @@
 # limitations under the License.
 #
 
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bluetooth.enablenewavrcp=false \
+    persist.bluetooth.showdeviceswithoutnames=true \
+    vendor.bluetooth.soc=cherokee
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.enable_hwc_vds=1
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.settings.xml=/system/etc/media_profiles_vendor.xml
@@ -21,3 +31,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9,9
+
+# Sensors
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.sensors.enable.mag_filter=true
