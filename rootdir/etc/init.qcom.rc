@@ -1,0 +1,3 @@
+on boot
+    # Gestures
+    chown system system /sys/devices/platform/soc/c80000.i2c/i2c-4/4-0038/dclick_mode
