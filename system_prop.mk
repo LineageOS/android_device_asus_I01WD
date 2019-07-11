@@ -20,6 +20,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.showdeviceswithoutnames=true \
     vendor.bluetooth.soc=cherokee
 
+# CNE
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.cne.feature=1
+
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.dpm.feature=10
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1
