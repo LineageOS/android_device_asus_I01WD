@@ -3,4 +3,6 @@ type log_file, file_type;
 type voucher_file, file_type;
 type xrom_file, file_type;
 
+type sysfs_touchscreen, sysfs_type, fs_type;
+
 type asus_motor_device, file_type;
