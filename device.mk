@@ -72,6 +72,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     vendor.lineage.camera.motor@1.0-service.asus_msmnile
 
+# Common init scripts
+PRODUCT_PACKAGES += \
+    init.qcom.rc
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
@@ -103,6 +107,10 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     com.android.nfc_extras
+
+# Power
+PRODUCT_PACKAGES += \
+    power.qcom:64
 
 # Update engine
 PRODUCT_PACKAGES += \
