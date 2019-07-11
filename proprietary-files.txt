@@ -75,5 +75,6 @@ etc/permissions/telephonyservice.xml
 etc/permissions/privapp-permissions-qti.xml
 etc/sysconfig/qti_whitelist.xml
 framework/qcrilhook.jar
+framework/qti-telephony-common.jar|e8275e58c6158b1227f2cfc26a17719294a7ef55
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
