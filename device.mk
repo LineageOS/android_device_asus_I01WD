@@ -131,6 +131,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.qcom:64
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Touch
 PRODUCT_PACKAGES += \
     lineage.touch@1.0-service.asus_msmnile
