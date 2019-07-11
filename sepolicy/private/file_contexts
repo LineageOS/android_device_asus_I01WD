@@ -8,6 +8,7 @@
 
 # Files in sysfs
 /sys/devices/platform/soc/c80000\.i2c/i2c-4/4-0038/dclick_mode	u:object_r:sysfs_touchscreen:s0
+/sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable	u:object_r:sysfs_googlekey:s0
 
 # Audio
 /system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0
