@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8bd64cc3_013d7f1f",
+        "filename": "camera_motor/CameraMotor.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18568
+      },
+      "writtenOn": "2019-07-13T03:03:44Z",
+      "side": 1,
+      "message": "derp?",
+      "revId": "dee8ebf2021d1fa7c6d5067a5778335bf8290826",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78c53e27_58fc158a",
+        "filename": "camera_motor/CameraMotor.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18568
+      },
+      "writtenOn": "2019-07-13T03:03:44Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "dee8ebf2021d1fa7c6d5067a5778335bf8290826",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
