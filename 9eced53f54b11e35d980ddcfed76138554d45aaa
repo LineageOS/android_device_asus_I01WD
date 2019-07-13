@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3750e12c_30e2e956",
+        "filename": "camera_motor/CameraMotor.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-07-13T06:28:00Z",
+      "side": 1,
+      "message": "I\u0027ll replace with #pragma once like I did in the other header\nI always hated these guards",
+      "revId": "9eced53f54b11e35d980ddcfed76138554d45aaa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
