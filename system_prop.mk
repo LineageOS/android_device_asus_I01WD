@@ -37,7 +37,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.enable_hwc_vds=1
+    debug.sf.enable_hwc_vds=1 \
+    ro.asus.hdr=1 \
+    ro.asus.wcg=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
