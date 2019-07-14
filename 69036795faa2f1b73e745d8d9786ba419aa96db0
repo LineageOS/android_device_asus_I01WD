@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9109633d_82248503",
+        "filename": "power/power-msmnile.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-07-14T11:38:41Z",
+      "side": 1,
+      "message": "Dunno, but I see 845 uses 100\nWill change",
+      "parentUuid": "4e7a3b79_163b8c8f",
+      "revId": "69036795faa2f1b73e745d8d9786ba419aa96db0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4d18b07e_00e8ed4f",
         "filename": "power/power-msmnile.c",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "2be5af0c_97db1f70",
+        "filename": "power/power-msmnile.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-07-14T11:38:41Z",
+      "side": 1,
+      "message": "It\u0027s used in case POWER_HINT_LAUNCH:",
+      "parentUuid": "4d18b07e_00e8ed4f",
+      "revId": "69036795faa2f1b73e745d8d9786ba419aa96db0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8b216936_76fff12b",
         "filename": "power/power-msmnile.c",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2019-07-14T11:31:37Z",
       "side": 1,
       "message": "better handle stub encoding/decoding hints here to avoid falling back to useless code path",
+      "revId": "69036795faa2f1b73e745d8d9786ba419aa96db0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bf09329_b4327928",
+        "filename": "power/power-msmnile.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-07-14T11:38:41Z",
+      "side": 1,
+      "message": "No I made sure common things were common, I\u0027ll let power.c handle it",
+      "parentUuid": "8b216936_76fff12b",
       "revId": "69036795faa2f1b73e745d8d9786ba419aa96db0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
