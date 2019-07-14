@@ -117,6 +117,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.qcom:64
 
+# Touch
+PRODUCT_PACKAGES += \
+    lineage.touch@1.0-service.asus_msmnile
+
 # Update engine
 PRODUCT_PACKAGES += \
     brillo_update_payload \
