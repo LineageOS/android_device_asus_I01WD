@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7a3b79_163b8c8f",
+        "filename": "power/power-msmnile.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2019-07-14T11:31:37Z",
+      "side": 1,
+      "message": "why 400?",
+      "revId": "69036795faa2f1b73e745d8d9786ba419aa96db0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d18b07e_00e8ed4f",
+        "filename": "power/power-msmnile.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2019-07-14T11:31:37Z",
+      "side": 1,
+      "message": "why is it unused?",
+      "revId": "69036795faa2f1b73e745d8d9786ba419aa96db0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b216936_76fff12b",
+        "filename": "power/power-msmnile.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2019-07-14T11:31:37Z",
+      "side": 1,
+      "message": "better handle stub encoding/decoding hints here to avoid falling back to useless code path",
+      "revId": "69036795faa2f1b73e745d8d9786ba419aa96db0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
