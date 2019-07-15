@@ -50,7 +50,7 @@ const int kMaxLaunchDuration = 5000;      /* ms */
 const int kMaxInteractiveDuration = 5000; /* ms */
 const int kMinInteractiveDuration = 100;  /* ms */
 
-static int process_activity_launch_hint(void* data __unused) {
+static int process_activity_launch_hint(void* data) {
     static int launch_handle = -1;
     static int launch_mode = 0;
 
@@ -107,7 +107,7 @@ static int process_interaction_hint(void* data) {
 }
 
 int power_hint_override(struct power_module* module __unused, power_hint_t hint,
-                        void* data __unused) {
+                        void* data) {
     int ret_val = HINT_NONE;
     switch (hint) {
         case POWER_HINT_INTERACTION:
