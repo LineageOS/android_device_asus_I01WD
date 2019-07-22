@@ -31,7 +31,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dpm.feature=10
+    persist.vendor.dpm.feature=10 \
+    persist.vendor.dpmhalservice.loglevel=0 \
+    persist.vendor.dpm.loglevel=0
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -40,6 +42,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.settings.xml=/system/etc/media_profiles_vendor.xml
+
+# Netmgr
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.data.mode=concurrent
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
