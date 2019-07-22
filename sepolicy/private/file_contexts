@@ -17,4 +17,4 @@
 /system/lib64/hw/power\.qcom\.so	u:object_r:vendor_file:s0
 
 # Modules
-/system/lib/modules/wlan\.ko	u:object_r:vendor_file:s0
+/system/lib/modules/qca_cld3_wlan\.ko	u:object_r:vendor_file:s0
