@@ -39,6 +39,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1
 
+# GPS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.overlay.izat.optin=rro
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.settings.xml=/system/etc/media_profiles_vendor.xml
