@@ -58,6 +58,22 @@ lib64/fm_helium.so
 lib64/libfm-hci.so|84379fac32897e65fccbe1a28feeaf933b5cc65c
 -lib64/vendor.qti.hardware.fm@1.0.so
 
+# GPS
+etc/permissions/com.qti.location.sdk.xml
+etc/permissions/com.qualcomm.location.xml
+etc/permissions/izat.xt.srv.xml
+etc/permissions/privapp-permissions-com.qualcomm.location.xml
+framework/com.qti.location.sdk.jar
+framework/izat.xt.srv.jar
+lib64/liblocationservice_jni.so|e5eec891da41bd2cd3215f76c368d45ca6d1bfd5
+lib64/libxt_native.so|8e84e549684f7335de5336362f73d0c13cc13bdc
+lib64/vendor.qti.gnss@1.0.so
+lib64/vendor.qti.gnss@1.1.so
+lib64/vendor.qti.gnss@1.2.so
+lib64/vendor.qti.gnss@2.0.so
+lib64/vendor.qti.gnss@2.1.so
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
+
 # IMS
 -priv-app/ims/ims.apk
 lib64/libdiag_system.so
