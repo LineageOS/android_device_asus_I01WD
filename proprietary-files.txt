@@ -52,10 +52,10 @@ lib64/libdpmtcm.so
 
 # FM
 lib/fm_helium.so
-lib/libfm-hci.so:3112240e36cacd79f4adebbbd4c8c6a5adc3193c
+lib/libfm-hci.so|3112240e36cacd79f4adebbbd4c8c6a5adc3193c
 -lib/vendor.qti.hardware.fm@1.0.so
 lib64/fm_helium.so
-lib64/libfm-hci.so:84379fac32897e65fccbe1a28feeaf933b5cc65c
+lib64/libfm-hci.so|84379fac32897e65fccbe1a28feeaf933b5cc65c
 -lib64/vendor.qti.hardware.fm@1.0.so
 
 # IMS
