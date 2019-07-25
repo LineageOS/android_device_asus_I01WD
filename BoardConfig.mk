@@ -128,7 +128,7 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/qcom/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/qcom/sepolicy/public
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(DEVIC_PATH)
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
