@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e97ebde_87f9d9db",
+        "filename": "extract-files.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-07-26T20:26:08Z",
+      "side": 1,
+      "message": "You can do something like this instead https://github.com/LineageOS/android_device_xiaomi_msm8998-common/commit/1eeda09e9ae3ab40cf6419c86bb5a0b92216f574#diff-594930765406fba887f66e34b0e91bc7R60",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 103
+      },
+      "revId": "860d7ce6b7126eae243f274bb7cb63e299351a43",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
