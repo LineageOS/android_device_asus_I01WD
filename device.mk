@@ -119,10 +119,12 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    NfcNci \
-    SecureElement \
+    NQNfcNci \
     Tag \
-    com.android.nfc_extras
+    com.android.nfc_extras \
+    com.nxp.nfc.nq \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml
 
 # Power
 PRODUCT_PACKAGES += \
