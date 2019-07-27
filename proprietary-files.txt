@@ -95,6 +95,16 @@ lib64/vendor.qti.imsrtpservice@1.0.so
 -priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
 -priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
 
+# NFC
+-app/NQNfcNci/NQNfcNci.apk
+etc/nqnfcee_access.xml
+etc/nqnfcse_access.xml
+etc/permissions/com.nxp.nfc.nq.xml
+framework/com.nxp.nfc.nq.jar
+lib64/libnqnfc_nci_jni.so
+lib64/libnqnfc-nci.so
+lib64/vendor.nxp.hardware.nfc@1.0.so
+
 # Telephony
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml
