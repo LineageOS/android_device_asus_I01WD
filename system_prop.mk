@@ -21,7 +21,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bluetooth.enablenewavrcp=false \
     persist.bluetooth.showdeviceswithoutnames=true \
     vendor.bluetooth.soc=cherokee
 
