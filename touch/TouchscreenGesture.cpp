@@ -43,7 +43,7 @@ const std::map<int32_t, TouchscreenGesture::GestureInfo> TouchscreenGesture::kGe
     // clang-format off
     {0, {46, "Letter C"}},
     {1, {18, "Letter e"}},
-    {2, {32, "Letter S"}},
+    {2, {31, "Letter S"}},
     {3, {47, "Letter V"}},
     {4, {17, "Letter W"}},
     {5, {44, "Letter Z"}},
