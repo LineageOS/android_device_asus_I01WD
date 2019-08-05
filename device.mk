@@ -84,6 +84,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvulkan
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.asus_msmnile
+
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
