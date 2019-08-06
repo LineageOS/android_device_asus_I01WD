@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "629cbe65_5b869d19",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T14:07:33Z",
+      "side": 1,
+      "message": "by removing the \u0026 you can probably pass the char directly without referencing it first",
+      "revId": "f7a28d6a15d892e564947b5f55fd8118b657c503",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c9fcce7_18dbac26",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T14:07:33Z",
+      "side": 1,
+      "message": "ops",
+      "revId": "f7a28d6a15d892e564947b5f55fd8118b657c503",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
