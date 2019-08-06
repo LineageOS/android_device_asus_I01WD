@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30dd745d_4eb1bdd4",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T13:27:40Z",
+      "side": 1,
+      "message": "add back template",
+      "revId": "492899062a41614dfec057526c7ec7de1044f5de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

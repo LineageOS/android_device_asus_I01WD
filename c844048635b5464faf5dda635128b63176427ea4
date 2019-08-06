@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "281d9a30_fc17e4f7",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T13:27:40Z",
+      "side": 1,
+      "message": "try to get these working with constexpr using a char pointer so we avoid allocating them",
+      "revId": "c844048635b5464faf5dda635128b63176427ea4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "476429b9_902a961b",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T13:27:40Z",
+      "side": 1,
+      "message": "T",
+      "revId": "c844048635b5464faf5dda635128b63176427ea4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "796d7bff_cec6e1b7",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T13:27:40Z",
+      "side": 1,
+      "message": "LOG(DEBUG) \u003c\u003c \"failed to write \" \u003c\u003c value",
+      "revId": "c844048635b5464faf5dda635128b63176427ea4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1f6fcc4_eb43272b",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T13:27:40Z",
+      "side": 1,
+      "message": "can be removed",
+      "revId": "c844048635b5464faf5dda635128b63176427ea4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c88605d8_eadd50f6",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T13:27:40Z",
+      "side": 1,
+      "message": "I think op can be a simple char and the std::string will handle it automatically",
+      "revId": "c844048635b5464faf5dda635128b63176427ea4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58a173ad_950a0b0a",
+        "filename": "lights/service.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-06T13:27:40Z",
+      "side": 1,
+      "message": "asus_msmnile",
+      "revId": "c844048635b5464faf5dda635128b63176427ea4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
