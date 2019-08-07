@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6b3ed7a_2ac27a32",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-08-07T10:47:25Z",
+      "side": 1,
+      "message": "const char op[]",
+      "range": {
+        "startLine": 109,
+        "startChar": 50,
+        "endLine": 109,
+        "endChar": 63
+      },
+      "revId": "2bcd041f556359de3fc445f4de478b6f5a1fb2e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
