@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7c05aae9_9d429c51",
+        "filename": "lights/Light.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 15450
+      },
+      "writtenOn": "2019-08-07T16:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebb22cb8_21bc67bf",
+      "revId": "6d2316f1f6d138e757adf9dae4fc42071bbc06ce",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef6c90e3_d6d9a0ab",
         "filename": "lights/Light.cpp",
         "patchSetId": 5
