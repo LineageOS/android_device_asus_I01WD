@@ -71,10 +71,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-# Camera
-PRODUCT_PACKAGES += \
-    lineage.camera.motor@1.0-service.asus_msmnile
-
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \

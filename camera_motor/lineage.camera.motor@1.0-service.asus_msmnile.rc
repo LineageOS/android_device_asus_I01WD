@@ -1,6 +1,0 @@
-service camera-motor-1-0 /system/bin/hw/lineage.camera.motor@1.0-service.asus_msmnile
-    interface vendor.lineage.camera.motor@1.0::ICameraMotor default
-    class hal
-    user system
-    group system
-    shutdown critical
