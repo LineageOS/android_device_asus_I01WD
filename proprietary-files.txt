@@ -34,6 +34,13 @@ lib64/com.quicinc.cne.server@2.3.so
 lib64/vendor.qti.hardware.data.latency@1.0.so
 -priv-app/CNEService/CNEService.apk
 
+# Camera
+lib64/libAsusMotorDriverHAL.so
+-priv-app/MotorService/MotorService.apk
+priv-app/MotorService/lib64/libAsusMotorDriverHAL.so
+priv-app/MotorService/lib/arm64/libjni_laser.so
+priv-app/MotorService/lib/arm64/libjni_motor.so
+
 # DPM
 bin/dpmd
 etc/dpm/dpm.conf
