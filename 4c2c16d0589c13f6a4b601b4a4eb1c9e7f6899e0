@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd883d0b_d3c533f4",
+        "filename": "CameraTile/res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-08-19T13:18:59Z",
+      "side": 1,
+      "message": "Don\u0027t forget cm_crowdin",
+      "revId": "4c2c16d0589c13f6a4b601b4a4eb1c9e7f6899e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
