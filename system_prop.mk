@@ -28,6 +28,34 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.capture.hdrplus.dump=0 \
+    ro.asus.camera.ai_scene_mode=0:1;1:1;2:1;3:1 \
+    ro.asus.camera.cam0.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30 \
+    ro.asus.camera.cam0.exposure_time_range=312500,32000000000 \
+    ro.asus.camera.cam0.preview_fps_range=8,45 \
+    ro.asus.camera.cam0.stream_list=1P/2Y/1J \
+    ro.asus.camera.cam0.video_fps=HD@60,FHD@60,4K@60 \
+    ro.asus.camera.cam1.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30 \
+    ro.asus.camera.cam1.exposure_time_range=312500,32000000000 \
+    ro.asus.camera.cam1.preview_fps_range=8,45 \
+    ro.asus.camera.cam1.stream_list=1P/2Y/1J \
+    ro.asus.camera.cam1.video_fps=HD@60,FHD@60,4K@60 \
+    ro.asus.camera.cam2.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30 \
+    ro.asus.camera.cam2.exposure_time_range=100000,16000000000 \
+    ro.asus.camera.cam2.video_fps=HD@60,FHD@60,4K@30 \
+    ro.asus.camera.cam3.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30 \
+    ro.asus.camera.cam3.exposure_time_range=100000,16000000000 \
+    ro.asus.camera.cam3.video_fps=HD@60,FHD@60,4K@30 \
+    ro.asus.camera.dual_bokeh=0:0;1:0;2:0;3:0;4:1;5:1 \
+    ro.asus.camera.fovc=0:1;1:1;2:0;3:0 \
+    ro.asus.camera.lens_type=0:standard;1:standard;2:wide-angle;3:wide-angle;4:virtual;5:virtual \
+    ro.asus.camera.preview_beauty=4:1;5:1 \
+    ro.asus.camera.undistortion.preview=0:0;1:0;2:1;3:1 \
+    ro.asus.camera.undistortion.video=0:0;1:0;2:0;3:0 \
+    ro.asus.camera.use_frame_processor=0
+
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpm.feature=10 \
