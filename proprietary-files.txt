@@ -35,6 +35,10 @@ lib64/vendor.qti.hardware.data.latency@1.0.so
 -priv-app/CNEService/CNEService.apk
 
 # Camera
+lib/DataSet/ispDB/ParameterDB.db
+lib/DataSet/ispDB/ASUS_UNDI.bin
+lib/DataSet/arch/DIT_List.cfg
+lib/DataSet/ditSCidGen/msgchk.db
 lib64/libAsusMotorDriverHAL.so
 lib64/libAsusRGBSensorHAL.so
 lib64/libxditk_DIT_MSMv1.so
