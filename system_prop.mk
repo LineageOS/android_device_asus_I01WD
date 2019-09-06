@@ -51,10 +51,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.asus.camera.dual_bokeh=0:0;1:0;2:0;3:0;4:1;5:1 \
     ro.asus.camera.fovc=0:1;1:1;2:0;3:0 \
     ro.asus.camera.lens_type=0:standard;1:standard;2:wide-angle;3:wide-angle;4:virtual;5:virtual \
+    ro.asus.camera.night=0:1;1:1;2:1;3:1 \
     ro.asus.camera.preview_beauty=4:1;5:1 \
     ro.asus.camera.undistortion.preview=0:0;1:0;2:1;3:1 \
     ro.asus.camera.undistortion.video=0:0;1:0;2:0;3:0 \
-    ro.asus.camera.use_frame_processor=0
+    ro.asus.camera.use_frame_processor=0 \
+    vendor.camera.expTimeMax=0
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
