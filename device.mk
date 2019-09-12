@@ -24,6 +24,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/asus/I01WD/I01WD-vendor.mk)
 
+# MindTheGapps
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
@@ -130,12 +133,10 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    NQNfcNci \
+    NfcNci \
+    SecureElement \
     Tag \
-    com.android.nfc_extras \
-    com.nxp.nfc.nq \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml
+    com.android.nfc_extras
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
