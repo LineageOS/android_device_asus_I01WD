@@ -8,6 +8,3 @@ type sysfs_touchscreen, sysfs_type, fs_type;
 
 type sysfs_rg_led, sysfs_type, fs_type;
 type sysfs_graphics, sysfs_type, fs_type;
-
-# system
-type system_configs_file, system_file_type, file_type;
