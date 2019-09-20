@@ -1,0 +1,1 @@
+allow hal_light sysfs_rg_led:file getattr;
