@@ -78,6 +78,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     media.settings.xml=/system/etc/media_profiles_vendor.xml
 
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.qti.nfc.chipid=0x51
+
 # Netmgr
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent

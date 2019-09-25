@@ -133,7 +133,13 @@ PRODUCT_PACKAGES += \
     NQNfcNci \
     Tag \
     com.android.nfc_extras \
+    com.gsma.services.nfc \
     com.nxp.nfc.nq \
+    com.nxp.nfc.nq.xml \
+    libnqnfc-nci \
+    libnqnfc_nci_jni \
+    libsn100nfc-nci \
+    libsn100nfc_nci_jni \
     nqnfcee_access.xml \
     nqnfcse_access.xml
 
@@ -143,7 +149,9 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    vendor/nxp/opensource/halimpl/pn5xx \
+    vendor/nxp/opensource/hidlimpl/pn5xx
 
 # Telephony
 PRODUCT_PACKAGES += \
