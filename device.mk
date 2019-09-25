@@ -143,7 +143,9 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    vendor/nxp/opensource/halimpl/pn5xx \
+    vendor/nxp/opensource/hidlimpl/pn5xx
 
 # Telephony
 PRODUCT_PACKAGES += \
