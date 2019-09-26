@@ -42,6 +42,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:system/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # A/B
@@ -107,7 +108,7 @@ PRODUCT_PACKAGES += \
 
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -141,6 +142,12 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
