@@ -12,7 +12,6 @@
 # HALs
 /system/bin/hw/lineage\.touch@1\.0-service\.asus_msmnile	u:object_r:hal_lineage_touch_asus_msmnile_exec:s0
 /system/bin/hw/lineage\.trust@1\.0-service	u:object_r:hal_trust_default_exec:s0
-/system/lib64/hw/power\.qcom\.so	u:object_r:vendor_file:s0
 /system/bin/hw/android\.hardware\.light@2\.0-service\.asus_msmnile    u:object_r:hal_light_msmnile_exec:s0
 
 # Modules
