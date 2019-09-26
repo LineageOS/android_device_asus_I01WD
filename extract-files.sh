@@ -70,10 +70,6 @@ patchelf --remove-needed android.hidl.base@1.0.so \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib/libfm-hci.so"
 patchelf --remove-needed android.hidl.base@1.0.so \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/libfm-hci.so"
-patchelf --remove-needed android.hidl.base@1.0.so \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/liblocationservice_jni.so"
-patchelf --remove-needed android.hidl.base@1.0.so \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/libxt_native.so"
 
 sed -i 's/<library name="android.hidl.manager-V1.0-java"/<library name="android.hidl.manager@1.0-java"/g' \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/etc/permissions/qti_libpermissions.xml"
