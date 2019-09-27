@@ -132,6 +132,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NQNfcNci \
     Tag \
+    SecureElement \
     com.android.nfc_extras \
     com.gsma.services.nfc \
     com.nxp.nfc.nq \
