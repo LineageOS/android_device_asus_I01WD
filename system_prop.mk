@@ -89,3 +89,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.sensors.enable.mag_filter=true
+
+# Vendor
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
