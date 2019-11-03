@@ -108,7 +108,7 @@ static int process_interaction_hint(void* data) {
     return HINT_HANDLED;
 }
 
-int power_hint_override(struct power_module* module __unused, power_hint_t hint,
+int power_hint_override(power_hint_t hint,
                         void* data) {
     int ret_val = HINT_NONE;
     switch (hint) {

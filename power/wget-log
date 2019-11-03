@@ -1,0 +1,12 @@
+--2019-11-03 14:08:25--  https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/power/plain/Power.cpp?h=LA.UM.8.1.r1-10700-sm8150.0
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving source.codeaurora.org (source.codeaurora.org)... 35.154.29.226
+Connecting to source.codeaurora.org (source.codeaurora.org)|35.154.29.226|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3408 (3.3K) [text/plain]
+Saving to: ‘Power.cpp?h=LA.UM.8.1.r1-10700-sm8150.0’
+
+Power.cpp?h=LA.UM.8.1.r1-10700-sm8150.0                       0%[                                                                                                                                           ]       0  --.-KB/s               Power.cpp?h=LA.UM.8.1.r1-10700-sm8150.0                     100%[==========================================================================================================================================>]   3.33K  --.-KB/s    in 0s      
+
+2019-11-03 14:08:26 (307 MB/s) - ‘Power.cpp?h=LA.UM.8.1.r1-10700-sm8150.0’ saved [3408/3408]
+
