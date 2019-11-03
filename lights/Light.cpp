@@ -141,8 +141,8 @@ void Light::handleNotification(const LightState& state, size_t index) {
 
     if (state.flashMode == Flash::TIMED) {
         for (const auto& entry : colorValues) {
-            set(makeLedPath(entry.first, kDelayOff), state.flashOnMs);
-            set(makeLedPath(entry.first, kDelayOn), state.flashOffMs);
+            set(makeLedPath(entry.first, kDelayOff), state.flashOffMs);
+            set(makeLedPath(entry.first, kDelayOn), state.flashOnMs);
         }
 
         // Start blinking
