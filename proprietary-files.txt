@@ -131,4 +131,4 @@ product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar
 product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar
+#product/framework/qti-telephony-common.jar
