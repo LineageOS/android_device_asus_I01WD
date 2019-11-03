@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom:64
+    android.hardware.power@1.2-service.asus_msmnile
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
