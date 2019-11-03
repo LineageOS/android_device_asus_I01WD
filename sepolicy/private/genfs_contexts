@@ -1,4 +1,5 @@
 genfscon sysfs /devices/platform/soc/soc:asustek_googlekey/googlekey_enable	u:object_r:sysfs_googlekey:s0
-genfscon sysfs /devices/platform/soc/c80000.i2c/i2c-4/4-0038/dclick_mode	u:object_r:sysfs_touchscreen:s0
 genfscon sysfs /devices/platform/soc/c80000.i2c/i2c-4/4-0038/fts_gesture_mode	u:object_r:sysfs_touchscreen:s0
 genfscon sysfs /devices/platform/soc/c80000.i2c/i2c-4/4-0038/fts_glove_mode	u:object_r:sysfs_touchscreen:s0
+
+genfscon proc /driver/dclick							u:object_r:proc_touchscreen:s0
