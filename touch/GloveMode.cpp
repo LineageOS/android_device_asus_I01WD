@@ -17,6 +17,7 @@
 #define LOG_TAG "GloveModeService"
 
 #include "GloveMode.h"
+
 #include <fstream>
 
 namespace vendor {
@@ -25,8 +26,7 @@ namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-const std::string kGloveModePath =
-    "/sys/devices/platform/soc/c80000.i2c/i2c-4/4-0038/fts_glove_mode";
+const std::string kGloveModePath = "/proc/driver/glove";
 
 Return<bool> GloveMode::isEnabled() {
     std::ifstream file(kGloveModePath);

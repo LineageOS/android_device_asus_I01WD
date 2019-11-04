@@ -5,5 +5,4 @@ allow init { system_file vendor_file }:file mounton;
 allow init vendor_configs_file:dir mounton;
 
 # Allow init to chown/chmod on pseudo files in /sys
-allow init sysfs_touchscreen:file { w_file_perms setattr };
 allow init sysfs_googlekey:file w_file_perms;
