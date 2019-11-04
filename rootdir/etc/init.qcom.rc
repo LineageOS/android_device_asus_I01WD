@@ -1,6 +1,3 @@
-on post-fs
-    mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
-
 on boot
     # Google Key
     write /sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable 1
