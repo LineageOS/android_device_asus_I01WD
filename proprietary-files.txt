@@ -113,6 +113,7 @@ product/lib64/lib-imsvt.so
 product/lib64/lib-imsvtutils.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so
+# Smali edit: https://gist.github.com/luca020400/b0152c9b77e55f50eee0513cf666f61c
 -product/priv-app/ims/ims.apk|7665c3a2369168b90aa15808224bb169d37c3327
 
 # HotwordEnrollment
@@ -131,4 +132,5 @@ product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar
 product/framework/qcrilhook.jar
+# Smali edit: https://gist.github.com/luca020400/7a6b05494c32d09c4e56e9285a2a5e32
 product/framework/qti-telephony-common.jar|d8aee306e1674e3c60006bf60c9a9dfd2cd5a403
