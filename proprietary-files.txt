@@ -113,7 +113,7 @@ product/lib64/lib-imsvt.so
 product/lib64/lib-imsvtutils.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk|cfa7ef73a2e64925c8359b22d07500ea6c36662c
+-product/priv-app/ims/ims.apk|7665c3a2369168b90aa15808224bb169d37c3327
 
 # HotwordEnrollment
 -product/priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
