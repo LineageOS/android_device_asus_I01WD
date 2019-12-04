@@ -132,5 +132,3 @@ product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar
 product/framework/qcrilhook.jar
-# Smali edit: https://gist.github.com/luca020400/7a6b05494c32d09c4e56e9285a2a5e32
-product/framework/qti-telephony-common.jar|d8aee306e1674e3c60006bf60c9a9dfd2cd5a403
