@@ -122,13 +122,17 @@ product/lib64/vendor.qti.imsrtpservice@2.1.so
 
 # Telephony
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
+-product/priv-app/QAS_DVC_MSP/QAS_DVC_MSP.apk
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 etc/permissions/privapp-permissions-qti.xml
 etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 etc/sysconfig/qti_whitelist.xml
+product/etc/permissions/embms.xml
+product/etc/permissions/embms-noship_product_privapp_permissions_qti.xml
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/QtiTelephonyServicelibrary.jar
+product/framework/embmslibrary.jar
 product/framework/qcrilhook.jar
