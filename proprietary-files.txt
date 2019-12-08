@@ -122,6 +122,7 @@ product/lib64/vendor.qti.imsrtpservice@2.1.so
 
 # Telephony
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
+-product/app/embms/embms.apk
 -product/priv-app/QAS_DVC_MSP/QAS_DVC_MSP.apk
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 etc/permissions/privapp-permissions-qti.xml
