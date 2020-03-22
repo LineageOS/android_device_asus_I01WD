@@ -16,5 +16,6 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Camerategel</string>
     <string name="camera_label">Camera draaien</string>
 </resources>
