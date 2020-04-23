@@ -15,6 +15,6 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">相机磁贴</string>
-    <string name="camera_label">旋转相机</string>
+    <string name="app_name">Kamera-csempe</string>
+    <string name="camera_label">Kameraforgatás</string>
 </resources>
