@@ -5,7 +5,7 @@ product/lib/com.qualcomm.qti.ant@1.0.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Bluetooth (aptX)
--app/aptxals/aptxals.apk
+-app/aptxals/aptxals.apk|428c4d5d1371fb8643c575767e0e79563d130536
 -app/aptxalsOverlay/aptxalsOverlay.apk
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
