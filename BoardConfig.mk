@@ -58,6 +58,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
+# Ramdisk
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Treble
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
 BOARD_VNDK_VERSION := current
