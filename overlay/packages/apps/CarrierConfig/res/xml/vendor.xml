@@ -106,6 +106,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="allow_one_way_accept_video_call" value="true"/>
         <!-- Config for multi anchor conference support  -->
         <boolean name="carrier_supports_multianchor_conference" value="false"/>
+
+        <!-- Config to show LTE+ icon if available -->
+        <boolean name="hide_lte_plus_data_icon_bool" value="false"/>
     </carrier_config>
 
     <carrier_config mcc="001" mnc="01">
