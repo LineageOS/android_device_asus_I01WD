@@ -15,6 +15,6 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">ไทล์กล้อง</string>
-    <string name="camera_label">หมุนกล้อง</string>
+    <string name="app_name">კამერა</string>
+    <string name="camera_label">კამერის შებრუნება</string>
 </resources>
