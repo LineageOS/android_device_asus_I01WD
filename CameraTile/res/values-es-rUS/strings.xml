@@ -15,6 +15,6 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Kotak kamera</string>
-    <string name="camera_label">Rotasikan kamera</string>
+    <string name="app_name">Mosaico de cámara</string>
+    <string name="camera_label">Girar la cámara</string>
 </resources>
